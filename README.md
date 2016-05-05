@@ -1,6 +1,6 @@
 # Pibot
 Pibot is a rough runtime for a rasbperry pi based robot im planning to make
-so far its only code based on pycharm 2016
+so far its only code written in Python 3.4 on pycharm 2016
 
 DO NOT ADD TO THIS REPO
 
