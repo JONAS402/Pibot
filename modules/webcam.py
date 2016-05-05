@@ -31,7 +31,6 @@ def webcam_detect():
 
         if cv2.waitKey(1) & 0xFF == ord('q'):
             print('Exiting...')
-            # video_capture.release()
             break
 
     # When everything is done, release the capture
