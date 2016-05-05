@@ -8,12 +8,10 @@ import platform
 
 
 class MemoryInfo:
+    def __init__(self):
+        self._fields = None
+
     def bytes2human(n):
-        # http://code.activestate.com/recipes/578019
-        # >>> bytes2human(10000)
-        # '9.8K'
-        # >>> bytes2human(100001221)
-        # '95.4M'
         symbols = ('K', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y')
         prefix = {}
         for i, s in enumerate(symbols):
@@ -25,7 +23,7 @@ class MemoryInfo:
         return "%sB" % n
 
 
-    def pprint_ntuple(nt):
+    def print_tuple(nt):
         for name in nt._fields:
             value = getattr(nt, name)
             if name != 'percent':
@@ -33,11 +31,12 @@ class MemoryInfo:
             print('%-10s : %7s' % (name.capitalize(), value))
 
 
+    @staticmethod
     def main():
         print('MEMORY\n------')
-        MemoryInfo.pprint_ntuple(psutil.virtual_memory())
+        MemoryInfo.print_tuple(psutil.virtual_memory())
         print('\nSWAP\n----')
-        MemoryInfo.pprint_ntuple(psutil.swap_memory())
+        MemoryInfo.print_tuple(psutil.swap_memory())
 
 
 class NetStat:
@@ -56,6 +55,7 @@ class NetStat:
 }
 
 
+    @staticmethod
     def main():
         import psutil
         templ = "%-5s %-30s %-30s %-13s %-6s %s"
@@ -69,10 +69,10 @@ class NetStat:
             except psutil.Error:
                 pass
         for c in psutil.net_connections(kind='inet'):
-            laddr = "%s:%s" % (c.laddr)
+            laddr = "%s:%s" % c.laddr
             raddr = ""
             if c.raddr:
-                raddr = "%s:%s" % (c.raddr)
+                raddr = "%s:%s" % c.raddr
             print(templ % (
                 NetStat.proto_map[(c.family, c.type)],
                 laddr,
@@ -97,6 +97,7 @@ class IfConfig:
 }
 
 
+    @staticmethod
     def main():
         stats = psutil.net_if_stats()
         for nic, addrs in psutil.net_if_addrs().items():
@@ -105,7 +106,7 @@ class IfConfig:
                     nic, stats[nic].speed, IfConfig.duplex_map[stats[nic].duplex],
                     stats[nic].mtu, "yes" if stats[nic].isup else "no"))
             else:
-                print("%s:" % (nic))
+                print("%s:" % nic)
             for addr in addrs:
                 print("    %-8s" % IfConfig.af_map.get(addr.family, addr.family), end="")
                 print(" address   : %s" % addr.address)
@@ -118,13 +119,9 @@ class IfConfig:
             print("")
 
 
+# noinspection PyMethodMayBeStatic
 class DiskUsage:
     def bytes2human(n):
-        # http://code.activestate.com/recipes/578019
-        # >>> bytes2human(10000)
-        # '9.8K'
-        # >>> bytes2human(100001221)
-        # '95.4M'
         symbols = ('K', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y')
         prefix = {}
         for i, s in enumerate(symbols):
@@ -136,6 +133,7 @@ class DiskUsage:
         return "%sB" % n
 
 
+    @staticmethod
     def main():
         templ = "%-17s %8s %8s %8s %5s%% %9s  %s"
         print(templ % ("Device", "Total", "Used", "Free", "Use ", "Type", "Mount"))
@@ -175,4 +173,4 @@ def run_diagnostics():
     info = MemoryInfo
     info.main()
 
-# run_diagnostics()
+run_diagnostics()

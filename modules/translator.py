@@ -66,6 +66,7 @@ def translate(string1, lang):
         print('import error')
     # print(LANGUAGES[lang])
     x = LANGUAGES[lang]
+    # noinspection PyBroadException
     try:
         blob = TextBlob(string1)
         var = blob.translate(to=x)

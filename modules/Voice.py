@@ -2,7 +2,7 @@ from pyglet.gl import *
 import os
 # V1.2
 
-vocab = 'vocab'
+vocab = 'modules/vocab'
 
 ''' moving to startup
 def make_directory():
@@ -23,9 +23,9 @@ def speak(word):
         text = os.path.join(vocab, word)
         tts.save(text + '.mp3')
         time.sleep(1)
-    except:
-        ConnectionError
+    except ConnectionError:
         print('cant say the word', word)
+
 
 def second_language(word, lang):
     from gtts import gTTS
@@ -35,8 +35,7 @@ def second_language(word, lang):
         text = os.path.join(vocab, word)
         tts.save(text + '.mp3')
         time.sleep(1)
-    except:
-        ConnectionError
+    except ConnectionError:
         print('cant say the word', word)
 
 
@@ -81,4 +80,4 @@ def think2nd(word, lang):
         say(word)
 # USAGE:
 # word = input('enter text: ')
-# think('the sentence)
+# think('the sentence')
