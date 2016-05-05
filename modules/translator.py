@@ -1,6 +1,7 @@
 
 # V1.0
 # TODO
+# clean code
 # MAKE LANGUAGE DICTS, IF SENTENCE NOT IN DICT THEN GOSLATE ELSE SPEAK
 LANGUAGES = {
     "Afrikaans": "af",
@@ -64,7 +65,6 @@ def translate(string1, lang):
         from modules.Voice import think2nd
     except ImportError:
         print('import error')
-    # print(LANGUAGES[lang])
     x = LANGUAGES[lang]
     # noinspection PyBroadException
     try:

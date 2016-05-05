@@ -3,8 +3,8 @@
 
 def webcam_detect():
     import cv2
-    cascPath = 'src/cascade_frontalface_webcam.xml'
-    faceCascade = cv2.CascadeClassifier(cascPath)
+    cascpath = 'src/cascade_frontalface_webcam.xml'
+    facecascade = cv2.CascadeClassifier(cascpath)
     print('Starting Facial Recognition...')
     # noinspection PyArgumentList
     video_capture = cv2.VideoCapture(-1)
@@ -13,7 +13,7 @@ def webcam_detect():
         # Capture frame-by-frame
         ret, frame = video_capture.read()
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-        faces = faceCascade.detectMultiScale(
+        faces = facecascade.detectMultiScale(
             gray,
             scaleFactor=1.1,
             minNeighbors=5,

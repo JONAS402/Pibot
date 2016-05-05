@@ -1,6 +1,7 @@
 # V1.55
+# TODO
 # set var for cwd and use to export to other modules to use as the root for resource file calls
-
+# add startup
 
 class Runtime:
     # noinspection PyMethodParameters

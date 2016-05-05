@@ -1,9 +1,7 @@
+# V1.0
+# TODO
+# read file from any path
 import cv2
-
-# Get user supplied values
-# import sys
-# imagePath = sys.argv[1]
-# cascPath = sys.argv[2]
 
 
 def face_detect(imagePath):

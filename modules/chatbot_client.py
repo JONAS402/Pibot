@@ -1,4 +1,7 @@
-
+# V1.0
+# TODO
+# add bot name to reply
+# write chatscripts
 
 def client():
     import socket

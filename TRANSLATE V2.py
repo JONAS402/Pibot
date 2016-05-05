@@ -32,8 +32,8 @@ def translate_v2(some_string, input_language):
                     try:
                         language_value = LANGUAGES[language_caps]
                         word_to_convert = TextBlob(word)
-                        var = word_to_convert.translate(to=language_value)
-                        new_word = str(var)
+                        translated = word_to_convert.translate(to=language_value)
+                        new_word = str(translated)
                         print("the word '{0}' is now '{1}' in '{2}'...".format(word, new_word, language_caps))
                         if new_word not in imported.values():
                             print("adding : '{0}' to dictionary".format(new_word))
@@ -48,7 +48,7 @@ def translate_v2(some_string, input_language):
         else:
             print('file doesnt exist')
 
-translate_v2(string1, 'french')
+# translate_v2(string1, 'french')
 
 
 def translate_and_learn(some_words, language):
@@ -87,3 +87,38 @@ def translate_string_to_language(some_text, input_language):
     print("'{0}' is now '{1}' in '{2}'".format(some_text, converted_string, language_caps))
 
 # translate_string_to_language(string1, 'german')
+
+
+def problem_words(word_list, language):
+    import os
+    path_and_file = os.path.join('languages', language + '_problem_words.py')
+    if os.path.isfile(path_and_file):
+        try:
+            name_lower = language.lower()
+            name_upper = name_lower.upper()
+            languages = 'languages'
+            import_languages_string = languages + '.' + name_lower + '_problem_words'
+            imported = getattr(__import__(import_languages_string, fromlist=[name_upper + "_PROBLEM_WORDS"]), name_upper + "_PROBLEM_WORDS")
+            word_split_list = word_list.split(' ')
+            for word in word_split_list:
+                if word not in imported:
+                    print("the word '{0}' is not in the '{1}' problem file".format(word, name_lower))
+                    imported.append(word)
+                    word_list = repr(imported)
+                    with open(path_and_file, "w") as f:
+                        print(name_upper + "_PROBLEM_WORDS = " + word_list, file=f)
+                else:
+                    print("the word '{0}' is in the '{1}' problem file".format(word, name_lower))
+        except AttributeError:
+            print("problem  with the '{0}' languages file... delete it and try again".format(language))
+    else:
+        print("creating '{0}' problem word file...".format(language))
+        word = word_list.split(' ')
+        name_lower = language.lower()
+        name_upper = name_lower.upper()
+        # new_words_list.append(word)
+        new_word_list = repr(word)
+        with open(path_and_file, "w") as f:
+            print(name_upper + "_PROBLEM_WORDS = " + new_word_list, file=f)
+
+# problem_words('banana balls seven minge praerie biscuit', 'french')

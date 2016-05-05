@@ -1,10 +1,7 @@
+# V1.0
 import psutil
 import os
 import platform
-
-# print(os.name)
-
-# psutil.test()
 
 
 class MemoryInfo:
@@ -119,7 +116,6 @@ class IfConfig:
             print("")
 
 
-# noinspection PyMethodMayBeStatic
 class DiskUsage:
     def bytes2human(n):
         symbols = ('K', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y')
@@ -140,9 +136,6 @@ class DiskUsage:
         for part in psutil.disk_partitions(all=False):
             if os.name == 'nt':
                 if 'cdrom' in part.opts or part.fstype == '':
-                    # skip cd-rom drives with no disk in it; they may raise
-                    # ENOENT, pop-up a Windows GUI error for a non-ready
-                    # partition or just hang.
                     continue
             usage = psutil.disk_usage(part.mountpoint)
             print(templ % (
@@ -173,4 +166,4 @@ def run_diagnostics():
     info = MemoryInfo
     info.main()
 
-run_diagnostics()
+# run_diagnostics()

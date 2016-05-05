@@ -1,6 +1,8 @@
+# V1.2
+# TODO
+# clean code
 from pyglet.gl import *
 import os
-# V1.2
 
 vocab = 'modules/vocab'
 

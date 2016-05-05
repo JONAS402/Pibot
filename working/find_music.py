@@ -1,3 +1,7 @@
+# prints all albums and bands to lists in music.py
+# V0.9
+# TODO
+# add tracks from albums
 """
 find dicts and lists from pathwalking a directory and assigning
 the folders to corresponding lists eg:
