@@ -11,7 +11,7 @@ if [[ $ans = "" ]]
 then
     echo "continuing..."
     echo "setting up mysql Database for Dejavu"
-    mysql -u root < "./sqls/create_dejavu_database.sql"
+    mysql -u root -p < "./sqls/create_dejavu_database.sql"
     mysql -u root -p < "./sqls/show_databases.sql"
     mysql -u root -p < "./sqls/show_dejavu_size.sql"
     echo "database setup complete"
@@ -26,6 +26,10 @@ then
         sudo apt-get -y dist-upgrade
         sudo apt-get -y autoremove
 
+        echo "installing Pyaudio dependencies..."
+        sudo apt-get install libportaudio2 libportaudiocpp0 portaudio19-dev
+        echo "Installing python3 pi-camera..."
+        sudo sudo apt-get install python3-picamera
         # INSTALL THE DEPENDENCIES
         # Build tools:
         echo "Installing... Build Tools"
