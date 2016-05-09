@@ -1,0 +1,1 @@
+TAMIL_PROBLEM_WORDS = ['']

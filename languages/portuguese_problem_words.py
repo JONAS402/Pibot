@@ -1,0 +1,1 @@
+PORTUGUESE_PROBLEM_WORDS = ['Alice', '']

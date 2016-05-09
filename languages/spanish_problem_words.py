@@ -1,0 +1,1 @@
+SPANISH_PROBLEM_WORDS = ['']
