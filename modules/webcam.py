@@ -1,8 +1,8 @@
 # V1.0
+import cv2
 
 
 def webcam_detect():
-    import cv2
     cascpath = 'src/cascade_frontalface_webcam.xml'
     facecascade = cv2.CascadeClassifier(cascpath)
     print('Starting Facial Recognition...')
@@ -37,4 +37,4 @@ def webcam_detect():
     cv2.destroyAllWindows()
     video_capture.release()
 
-webcam_detect()
+# webcam_detect()

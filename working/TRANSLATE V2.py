@@ -122,6 +122,7 @@ def translate_and_learn(some_words, language):
 
 # translate_and_learn(text, 'albanian')
 
+
 # noinspection PyBroadException,PyBroadException
 def translate_v2(some_string, input_language):
     language_caps = input_language.capitalize()
@@ -161,9 +162,6 @@ def translate_v2(some_string, input_language):
 # translate_v2(string1, 'haitian creole')
 
 
-
-
-
 def translate_string_to_language(some_text, input_language):
     language_caps = input_language.capitalize()
     name_lower = input_language
@@ -185,8 +183,6 @@ def translate_string_to_language(some_text, input_language):
     print("'{0}' is now '{1}' in '{2}'".format(some_text, converted_string, language_caps))
 
 # translate_string_to_language(string1, 'german')
-
-
 
 
 def learn_some_basics(file):

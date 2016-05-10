@@ -2,25 +2,15 @@
 # TODO
 # clean code
 from pyglet.gl import *
+from gtts import gTTS
+import time
 import os
-
+import pyglet
 vocab = 'modules/vocab'
 
-''' moving to startup
-def make_directory():
-    if not os.path.exists(vocab):
-        print('Making Directory: ', vocab)
-        os.makedirs(vocab)
-    else:
-        print('Directory Exists.')
-
-make_directory()
-'''
 
 def speak(word):
-    from gtts import gTTS
     try:
-        import time
         tts = gTTS(word, lang='en')
         text = os.path.join(vocab, word)
         tts.save(text + '.mp3')
@@ -30,9 +20,7 @@ def speak(word):
 
 
 def second_language(word, lang):
-    from gtts import gTTS
     try:
-        import time
         tts = gTTS(word, lang)
         text = os.path.join(vocab, word)
         tts.save(text + '.mp3')
@@ -47,8 +35,6 @@ def exit_callback(df):   # do not delete df
 
 
 def say(word):
-    import pyglet
-    import os
     text = os.path.join(vocab, word)
     t1 = text + '.mp3'
     infile = os.path.realpath(t1)

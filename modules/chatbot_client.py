@@ -2,9 +2,10 @@
 # TODO
 # add bot name to reply
 # write chatscripts
+import socket
+
 
 def client():
-    import socket
     host = "localhost"
     port = 1024
     addr = (host, port)
@@ -34,4 +35,4 @@ def client():
         client_socket.close()
 
 
-client()
+# client()

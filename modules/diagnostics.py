@@ -2,6 +2,10 @@
 import psutil
 import os
 import platform
+import socket
+from socket import AF_INET
+from socket import SOCK_STREAM
+from socket import SOCK_DGRAM
 
 
 class MemoryInfo:
@@ -38,10 +42,7 @@ class MemoryInfo:
 
 class NetStat:
 
-    import socket
-    from socket import AF_INET
-    from socket import SOCK_STREAM
-    from socket import SOCK_DGRAM
+
     AD = "-"
     AF_INET6 = getattr(socket, 'AF_INET6', object())
     proto_map = {
@@ -80,7 +81,6 @@ class NetStat:
 
 
 class IfConfig:
-    import socket
     af_map = {
         socket.AF_INET: 'IPv4',
         socket.AF_INET6: 'IPv6',

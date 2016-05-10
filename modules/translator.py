@@ -3,6 +3,12 @@
 # TODO
 # clean code
 # MAKE LANGUAGE DICTS, IF SENTENCE NOT IN DICT THEN GOSLATE ELSE SPEAK
+from textblob import TextBlob
+try:
+    from modules.Voice import think
+    from modules.Voice import think2nd
+except ImportError:
+    print('import error')
 LANGUAGES = {
     "Afrikaans": "af",
     "Albanian": "sq",
@@ -59,12 +65,6 @@ LANGUAGES = {
 
 
 def translate(string1, lang):
-    from textblob import TextBlob
-    try:
-        from modules.Voice import think
-        from modules.Voice import think2nd
-    except ImportError:
-        print('import error')
     x = LANGUAGES[lang]
     # noinspection PyBroadException
     try:

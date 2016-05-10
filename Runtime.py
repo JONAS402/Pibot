@@ -1,17 +1,79 @@
-# V1.55
+# V1.56
 # TODO
 # set var for cwd and use to export to other modules to use as the root for resource file calls
-# add startup
+#
+import time
+import os
+
+
+def make_directory():
+    vocab = 'modules/vocab'
+    if not os.path.exists(vocab):
+        print('Making Directory: ', vocab)
+        os.makedirs(vocab)
+    else:
+        print('Directory Exists.')
+
 
 class Runtime:
     # noinspection PyMethodParameters
     def run(key):
-        print('Initializing A.I...')  # WRITING STARTUP SCRIPT
-        import time
         start = time.ctime()
+        print('Initializing A.I...')
+        make_directory()
         try:
+            print('Importing... Voice')
             from modules.Voice import think
         except ImportError:
+            print('error importing: Voice')
+            print('cannot initialize A.I...')
+            print('exiting...')
+            raise SystemExit
+        try:
+            print('Importing... Morsecode')
+            from modules.Morsecode import morsecode
+        except ImportError:
+            print('error importing: Morsecode')
+            print('cannot initialize A.I...')
+            print('exiting...')
+            raise SystemExit
+        try:
+            print('Importing... Diagnostics')
+            from modules.diagnostics import run_diagnostics
+        except ImportError:
+            print('error importing: Diagnostics')
+            print('cannot initialize A.I...')
+            print('exiting...')
+            raise SystemExit
+        try:
+            print('Importing... Translator')
+            from modules.translator import translator
+        except ImportError:
+            print('error importing: Translator')
+            print('cannot initialize A.I...')
+            print('exiting...')
+            raise SystemExit
+        try:
+            print('Importing... Webcam')
+            from modules.webcam import webcam_detect
+        except ImportError:
+            print('error importing: Webcam')
+            print('cannot initialize A.I...')
+            print('exiting...')
+            raise SystemExit
+        try:
+            print('Importing... Face Detect')
+            from modules.face_detect import face_detect
+        except ImportError:
+            print('error importing: Face Detect')
+            print('cannot initialize A.I...')
+            print('exiting...')
+            raise SystemExit
+        try:
+            print('Importing... Chat client')
+            from modules.chatbot_client import client
+        except ImportError:
+            print('error importing: Chat Client')
             print('cannot initialize A.I...')
             print('exiting...')
             raise SystemExit
@@ -27,30 +89,24 @@ class Runtime:
                 if key == 'KILL':
                     KILLSWITCH = 1
                 elif key == 'DIAG':
-                    from modules.diagnostics import run_diagnostics  # TEMP IMPORTS, DEFINE A TRY EXCEPT IMPORT SYSTEM
                     print('running diagnostics')
                     run_diagnostics()
                 elif key == 'TRANSLATE':
                     print('broken')
-                    from modules.translator import translator
                     text_to_translate = input('enter text to translate: ')
                     translator(text_to_translate)
                 elif key == 'MORSECODE':
-                    from modules.Morsecode import morsecode
                     convert_to_morsecode = input('enter text to convert to morsecode: ')
                     morsecode(convert_to_morsecode)
                 elif key == 'WEBCAM':
-                    from modules.webcam import webcam_detect
                     print('webcam is currently in beta--- doesnt kill webcam after grab')
                     webcam_detect()
                 elif key == 'FACE':
-                    from modules.face_detect import face_detect
                     print('face detect is currently in beta WONT TAKE FILE FROM OTHER FOLDERS')
                     # imagePath = input('enter a file to face detect: ')
                     imagePath = 'modules/src/abba.png'
                     face_detect(imagePath)
                 elif key == 'CHAT':
-                    from modules.chatbot_client import client
                     print('chatbot in beta')
                     print('chatbot may or may not be running')
                     client()
