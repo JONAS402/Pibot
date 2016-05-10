@@ -13,12 +13,8 @@ problem languages
     "English - Australia": "en - au",
     "English - UK": "en - uk",
     "English - US": "en - us",
-
     "Spanish - Spain": "es - es",
     "Spanish - US": "es - us",
-    "Mandarin - Taiwan": "zh - tw",
-
-    "Mandarin - China": "zh - cn",
     """
 
 LANGUAGES = {
@@ -50,6 +46,7 @@ LANGUAGES = {
     "Latin": "la",
     "Latvian": "lv",
     "Macedonian": "mk",
+    "Mandarin": "zh - cn",
     "Norwegian": "no",
     "Polish": "pl",
     "Portuguese": "pt",
@@ -61,6 +58,7 @@ LANGUAGES = {
     "Swahili": "sw",
     "Swedish": "sv",
     "Tamil": "ta",
+    "Taiwanese": "zh - tw",
     "Thai": "th",
     "Turkish": "tr",
     "Vietnamese": "vi",
@@ -186,7 +184,7 @@ def translate_string_to_language(some_text, input_language):
     converted_string = ' '.join(empty_string)
     print("'{0}' is now '{1}' in '{2}'".format(some_text, converted_string, language_caps))
 
-#translate_string_to_language(string1, 'german')
+# translate_string_to_language(string1, 'german')
 
 
 

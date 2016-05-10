@@ -25,7 +25,7 @@ def find_music(directory):
     import os
     ARTISTS = []
     ALBUMS = []
-    src = 'src'
+    # src = 'src'  # source folder
     for root, dirs, files in os.walk(directory, topdown=False):
         for name in files:
             full = os.path.join(root, name)
@@ -77,17 +77,18 @@ def find_music(directory):
     literal = repr(ALBUMS)
     print('Writing Artists to music.py')
     print('Writing ALBUMS to music.py')
-    music_file = os.path.join(src, 'music.py')
+    # music_file = os.path.join(src, 'music.py')
+    music_file = 'music.py'
     if os.path.isfile(music_file):
         with open(music_file, 'w') as f:
-            f.write("ARTISTS =" + literal1 + '\n\n')
-            f.write("ALBUMS =" + literal + '\n\n')
+            f.write("ARTISTS = " + literal1 + '\n\n')
+            f.write("ALBUMS = " + literal + '\n\n')
             f.close()
     else:
         print(music_file, 'does not exist, creating now...')
         with open(music_file, 'w') as f:
-            f.write("ARTISTS =" + literal1 + '\n\n')
-            f.write("ALBUMS =" + literal + '\n\n')
+            f.write("ARTISTS = " + literal1 + '\n\n')
+            f.write("ALBUMS = " + literal + '\n\n')
             f.close()
 
 dir1 = '/home/jonas/Music'
