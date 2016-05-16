@@ -37,4 +37,4 @@ def webcam_detect():
     cv2.destroyAllWindows()
     video_capture.release()
 
-# webcam_detect()
+webcam_detect()

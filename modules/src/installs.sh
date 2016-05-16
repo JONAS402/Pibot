@@ -1,4 +1,6 @@
 #!/bin/bash
+# TODO
+# add pips
 
 echo "                       *************
                        **JONAS_402**
@@ -48,7 +50,12 @@ then
         sudo apt-get install -y libtbb-dev libeigen3-dev
         # Python:
         echo "Installing... Python Extras"
-        sudo apt-get install -y python-dev python-tk python-numpy python3-dev python3-tk python3-numpy
+        sudo apt-get install -y python-dev python-tk python-numpy python3-dev python3-tk python3-numpy python3.4
+        # pip installs
+        echo "installing... Pip Installs"
+        sudo pip install
+
+
         # Java:
         echo "Installing... Java"
         sudo apt-get install -y ant default-jdk
