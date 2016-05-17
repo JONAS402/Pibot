@@ -106,14 +106,6 @@ LANGUAGES = {
 }
 
 
-string1 = 'new words for like this'
-text = "The titular threat of The Blob has always struck me as the ultimate movie monster an insatiably hungry," \
-       " amoeba like mass able to penetrate virtually any safeguard, capable of as a doomed doctor chillingly" \
-       " describes it assimilating flesh on contact. Snide comparisons to gelatin be damned, it's a concept with" \
-       " the most devastating of potential consequences, not unlike the grey goo scenario proposed by technological" \
-       " theorists fearful of artificial intelligence run rampant."
-
-
 def problem_words(word_list, language):
     name_lower = language.lower()
     name_upper = name_lower.upper()
@@ -210,10 +202,6 @@ def translate_v2(some_string, input_language):
                                 "'{0}' is in the '{2}' dictionary as'{1}'".format(word, imported[word], language_caps))
                     except UnboundLocalError:
                         print("UnboundLocalError: problem  with the '{0}' languages file... delete it and try again".format(input_language))
-
-
-
-
         else:
             print('file doesnt exist')
             translate_and_learn(some_string, input_language)
@@ -250,13 +238,12 @@ def learn_some_basics(file):
         print("about to learn the contents of the file '{0}' in all languages".format(file))
         content = f.read()
         new_line_stripped = content.replace('\n', ' ')
-        # print('contents = ', contents)
+        zero_width_stripped = new_line_stripped.replace('\u200b', '')             # test
         translator = str.maketrans({key: None for key in string.punctuation})
         translate = new_line_stripped.translate(translator)
         for key in sorted(LANGUAGES.items()):
-            # print(key[0], end=", ")
             translate_and_learn(translate, key[0])
             print("learnt... '{0}'".format(key[0]))
-# file = 'working/alice in wonderland.txt'
-file = 'working/test.txt'
+file = 'working/alice in wonderland.txt'
+# file = 'working/test.txt'
 learn_some_basics(file)

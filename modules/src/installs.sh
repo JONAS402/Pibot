@@ -46,6 +46,8 @@ then
         echo "Installing... Video I/O"
         sudo apt-get install -y libdc1394-22-dev libavcodec-dev libavformat-dev libswscale-dev libtheora-dev libvorbis-dev libxvidcore-dev libx264-dev yasm libopencore-amrnb-dev libopencore-amrwb-dev libv4l-dev libxine2-dev
         # Parallelism and linear algebra libraries:
+        echo "Installing... Fonts"
+        sudo apt-get install fonts-arphic-ukai fonts-arphic-uming fonts-ipafont-mincho fonts-ipafont-gothic fonts-unfonts-core
         echo "Installing... Parallelism and linear algebra libraries"
         sudo apt-get install -y libtbb-dev libeigen3-dev
         # Python:
@@ -53,8 +55,15 @@ then
         sudo apt-get install -y python-dev python-tk python-numpy python3-dev python3-tk python3-numpy python3.4
         # pip installs
         echo "installing... Pip Installs"
-        sudo pip install
-
+        sudo apt-get install portaudio19-dev # for pyaudio
+        sudo apt-get install python3-pip
+        sudo pip3 install PyAudio
+        sudo pip3 install PyDejavu
+        sudo pip3 install PyMySQL
+        sudo pip3 install gTTS
+        sudo pip3 install textblob
+        sudo pip3 install pyglet
+        sudo pip3 install psutil
 
         # Java:
         echo "Installing... Java"
