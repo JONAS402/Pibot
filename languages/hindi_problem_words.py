@@ -1,1 +1,1 @@
-HINDI_PROBLEM_WORDS = ['the', '']
+HINDI_PROBLEM_WORDS = ['the']

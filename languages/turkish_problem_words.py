@@ -1,1 +1,1 @@
-TURKISH_PROBLEM_WORDS = ['Alice', 'the', '']
+TURKISH_PROBLEM_WORDS = ['Alice', 'the', 'peeped']

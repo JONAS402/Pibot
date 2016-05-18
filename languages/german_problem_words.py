@@ -1,1 +1,1 @@
-GERMAN_PROBLEM_WORDS = ['Alice', '']
+GERMAN_PROBLEM_WORDS = ['Alice']

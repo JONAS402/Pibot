@@ -1,1 +1,1 @@
-SWEDISH_PROBLEM_WORDS = ['Alice', 'do:', '']
+SWEDISH_PROBLEM_WORDS = ['Alice', 'do', 'peeped']

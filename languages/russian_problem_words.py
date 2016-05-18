@@ -1,1 +1,1 @@
-RUSSIAN_PROBLEM_WORDS = ['the', '', 'a']
+RUSSIAN_PROBLEM_WORDS = ['the', 'a']

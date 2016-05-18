@@ -1,1 +1,1 @@
-SLOVAK_PROBLEM_WORDS = ['Alice', 'the', '', 'a']
+SLOVAK_PROBLEM_WORDS = ['Alice', 'her', 'the', 'a']

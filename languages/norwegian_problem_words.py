@@ -1,1 +1,1 @@
-NORWEGIAN_PROBLEM_WORDS = ['Alice', 'bank,', '']
+NORWEGIAN_PROBLEM_WORDS = ['Alice', 'bank']

@@ -1,1 +1,1 @@
-ITALIAN_PROBLEM_WORDS = ['Alice', '', 'in']
+ITALIAN_PROBLEM_WORDS = ['Alice', 'no', 'in']

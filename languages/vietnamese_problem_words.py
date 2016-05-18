@@ -1,1 +1,1 @@
-VIETNAMESE_PROBLEM_WORDS = ['Alice', '']
+VIETNAMESE_PROBLEM_WORDS = ['Alice', 'peeped']

@@ -1,1 +1,1 @@
-POLISH_PROBLEM_WORDS = ['the', '']
+POLISH_PROBLEM_WORDS = ['the', 'peeped']

@@ -1,1 +1,1 @@
-SERBIAN_PROBLEM_WORDS = ['the', '', 'a']
+SERBIAN_PROBLEM_WORDS = ['the', 'a']

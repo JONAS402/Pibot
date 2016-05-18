@@ -19,7 +19,7 @@ LANGUAGES = {
     "Belarusian": "be",
     "Bengali": "bn",
     "Bosnian": "bs",
-    "Brazilian": "pt-br",
+    "Brazilian": "pt-br",   # unicode error
     "Bulgarian": "bg",
     "Burmese": "my",
     "Catalan": "ca",

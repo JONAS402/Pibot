@@ -1,1 +1,1 @@
-GREEK_PROBLEM_WORDS = ['']
+GREEK_PROBLEM_WORDS = ['peeped']

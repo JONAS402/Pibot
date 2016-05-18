@@ -1,1 +1,1 @@
-ICELANDIC_PROBLEM_WORDS = ['Alice', '', 'a']
+ICELANDIC_PROBLEM_WORDS = ['Alice', 'peeped', 'a']

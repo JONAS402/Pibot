@@ -1,1 +1,0 @@
-KOREAN_PROBLEM_WORDS = ['']

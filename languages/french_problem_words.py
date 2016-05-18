@@ -1,1 +1,1 @@
-FRENCH_PROBLEM_WORDS = ['Alice', '', 'conversations', "conversation?'\n"]
+FRENCH_PROBLEM_WORDS = ['Alice', 'conversations', 'conversation']

@@ -1,1 +1,1 @@
-THAI_PROBLEM_WORDS = ['the', '', 'a']
+THAI_PROBLEM_WORDS = ['the', 'a']

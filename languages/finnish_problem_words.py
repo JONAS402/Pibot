@@ -1,1 +1,1 @@
-FINNISH_PROBLEM_WORDS = ['Alice', 'of', 'the', '', 'a']
+FINNISH_PROBLEM_WORDS = ['Alice', 'of', 'the', 'a']

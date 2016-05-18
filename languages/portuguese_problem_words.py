@@ -1,1 +1,1 @@
-PORTUGUESE_PROBLEM_WORDS = ['Alice', '']
+PORTUGUESE_PROBLEM_WORDS = ['Alice', 'peeped']

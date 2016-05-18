@@ -1,1 +1,1 @@
-HUNGARIAN_PROBLEM_WORDS = ['Alice', 'bank,', 'do:', '']
+HUNGARIAN_PROBLEM_WORDS = ['Alice', 'bank']

@@ -7,11 +7,13 @@ echo "                       *************
                        ************* 
 "
 
-echo "this is the pibot first time install script, are you sure you want to run it?"
+echo "this is the pibot first time install script, are you sure you want to run it? [enter] for y"
 read ans
 if [[ $ans = "" ]]
 then
     echo "continuing..."
+    echo "Installing mysql-server-5.5"
+    sudo apt-get install mysql-server-5.5
     echo "setting up mysql Database for Dejavu"
     mysql -u root -p < "./sqls/create_dejavu_database.sql"
     mysql -u root -p < "./sqls/show_databases.sql"
@@ -64,7 +66,6 @@ then
         sudo pip3 install textblob
         sudo pip3 install pyglet
         sudo pip3 install psutil
-
         # Java:
         echo "Installing... Java"
         sudo apt-get install -y ant default-jdk
