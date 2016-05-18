@@ -59,6 +59,7 @@ then
         echo "installing... Pip Installs"
         sudo apt-get install portaudio19-dev # for pyaudio
         sudo apt-get install python3-pip
+        sudo apt-get install python3-picamera
         sudo pip3 install PyAudio
         sudo pip3 install PyDejavu
         sudo pip3 install PyMySQL
