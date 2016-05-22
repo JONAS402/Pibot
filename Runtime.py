@@ -85,9 +85,17 @@ class Runtime:
             key = ''
             KILLSWITCH = 0
             while KILLSWITCH != 1:
+                print('#############################################')
+                print('## Module:                            Key: ##')
+                print('## Diagnostics                        DIAG ##')
+                print('## Face detection in a picture        FACE ##')
+                print('## Morse code                    MORSECODE ##')
+                print('## Translator                    TRANSLATE ##')
+                print('## Camera Face detection            WEBCAM ##')
+                print('## Kill Command                       KILL ##')
+                print('## please enter some text and i will talk  ##')
                 think('please enter some text and i will talk')
-                think("enter kill, to kill")
-                key = input("Please enter text, 'KILL' to kill: ")
+                key = input("XXX: ")
                 if key == 'KILL':
                     KILLSWITCH = 1
                 elif key == 'DIAG':
