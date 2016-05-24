@@ -67,6 +67,12 @@ then
         sudo pip3 install textblob
         sudo pip3 install pyglet
         sudo pip3 install psutil
+        echo "Installing others..."
+        sudo apt-get install libgphoto2-2-dev
+        sudo apt-get install opencl-headers
+        sudo apt-get install samba samba-common-bin
+        echo "enter a pasword for pi user on smb server"
+        sudo smbpasswd -a pi
         # Java:
         echo "Installing... Java"
         sudo apt-get install -y ant default-jdk
@@ -76,22 +82,45 @@ then
         # INSTALL THE LIBRARY (YOU CAN CHANGE '3.0.0' FOR THE LAST STABLE VERSION)
         sudo apt-get install -y unzip wget
         echo "Installing... Wget"
-        echo "moving to ... /PIBOT"
-        cd /PIBOT
-        echo "downloading... Open-CV 3.0.0.zip"
-        wget https://github.com/Itseez/opencv/archive/3.0.0.zip
-        echo "unzipping and cleaning..."
-        unzip 3.0.0.zip
-        rm 3.0.0.zip
-        mv opencv-3.0.0 OpenCV
-        cd OpenCV
-        mkdir build
-        cd build
-        echo "Making Open-CV 3.0.0"
-        cmake -DWITH_QT=ON -DWITH_OPENGL=ON -DFORCE_VTK=ON -DWITH_TBB=ON -DWITH_GDAL=ON -DWITH_XINE=ON -DBUILD_EXAMPLES=ON ..
-        make -j4
-        echo "Installing Open-CV 3.0.0"
-        sudo make install
+        if
+            [ -e /PIBOT/modules/src ]
+        then
+            echo "moving to ... /PIBOT/modules/src"
+            cd /PIBOT/modules/src
+            echo "downloading... Open-CV 3.0.0.zip"
+            wget https://github.com/Itseez/opencv/archive/3.0.0.zip
+            echo "unzipping and cleaning..."
+            unzip 3.0.0.zip
+            rm 3.0.0.zip
+            mv opencv-3.0.0 OpenCV
+            cd OpenCV
+            mkdir build
+            cd build
+            echo "Making Open-CV 3.0.0" #errors if spaces in fullpath
+            cmake -DWITH_QT=ON -DWITH_OPENGL=ON -DFORCE_VTK=ON -DWITH_TBB=ON -DWITH_GDAL=ON -DWITH_XINE=ON -DBUILD_EXAMPLES=ON ..
+            make -j4
+            echo "Installing Open-CV 3.0.0"
+            sudo make install
+        else
+            mkdir /PIBOT/modules
+            mkdir /PIBOT/modules/src
+            echo "moving to ... /PIBOT/modules/src"
+            cd /PIBOT/modules/src
+            echo "downloading... Open-CV 3.0.0.zip"
+            wget https://github.com/Itseez/opencv/archive/3.0.0.zip
+            echo "unzipping and cleaning..."
+            unzip 3.0.0.zip
+            rm 3.0.0.zip
+            mv opencv-3.0.0 OpenCV
+            cd OpenCV
+            mkdir build
+            cd build
+            echo "Making Open-CV 3.0.0" #errors if spaces in fullpath
+            cmake -DWITH_QT=ON -DWITH_OPENGL=ON -DFORCE_VTK=ON -DWITH_TBB=ON -DWITH_GDAL=ON -DWITH_XINE=ON -DBUILD_EXAMPLES=ON ..
+            make -j4
+            echo "Installing Open-CV 3.0.0"
+            sudo make install
+        fi
         echo "Running... ldconfig"
         sudo ldconfig
         echo "Installation Complete"

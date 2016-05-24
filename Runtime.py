@@ -1,7 +1,7 @@
-# V1.56
+# V1.60
 # TODO
-# set var for cwd and use to export to other modules to use as the root for resource file calls
-# main menu
+# import new modules from working dir
+# ensure all modules are ran from /PIBOT directory
 #
 
 import time
@@ -131,5 +131,7 @@ class Runtime:
                 print("Born    ...{0}...".format(start))
                 print("Died    ...{0}...".format(end))
 
-ai = Runtime()
-ai.run()
+
+if __name__ == '__main__':
+    ai = Runtime()
+    ai.run()

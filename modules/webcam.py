@@ -1,4 +1,5 @@
 # V1.0
+# errors but works on pycharm
 import cv2
 
 

@@ -35,20 +35,20 @@ def exit_callback(df):   # do not delete df
 
 
 def say(word):
-    text = os.path.join(vocab, word)
-    t1 = text + '.mp3'
-    infile = os.path.realpath(t1)
-    music = pyglet.media.load(infile)
+    filepath = os.path.join(vocab, word)
+    path_and_name = filepath + '.mp3'
+    full_path_name = os.path.realpath(path_and_name)
+    loaded_file = pyglet.media.load(full_path_name)
     pyglet.resource.reindex()
-    music.play()
+    loaded_file.play()
     print("saying... '%s' " % word)
-    pyglet.clock.schedule_once(exit_callback, music.duration)
+    pyglet.clock.schedule_once(exit_callback, loaded_file.duration)
     pyglet.app.run()
 
 
 def think(word):
-    path1 = os.path.join(vocab, word)
-    if os.path.isfile(path1 + '.mp3'):
+    think_file_path = os.path.join(vocab, word)
+    if os.path.isfile(think_file_path + '.mp3'):
         # print("Sentence '%s' is in vocabulary" % word)
         say(word)
     else:
@@ -58,8 +58,8 @@ def think(word):
 
 
 def think2nd(word, lang):
-    path1 = os.path.join(vocab, word)
-    if os.path.isfile(path1 + '.mp3'):
+    second_language_think = os.path.join(vocab, word)
+    if os.path.isfile(second_language_think + '.mp3'):
         # print("Sentence '%s' is in vocabulary" % word)
         say(word)
     else:
@@ -68,4 +68,4 @@ def think2nd(word, lang):
         say(word)
 # USAGE:
 # word = input('enter text: ')
-# think('the sentence')
+# think('howdy')

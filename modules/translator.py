@@ -1,4 +1,3 @@
-
 # V1.0
 # TODO
 # clean code
@@ -98,7 +97,7 @@ def translator(text_translate):
     target_language = target_language1.capitalize()
 
     try:
-        translate(text_translate, target_language) # varibles to pass to run.py
+        translate(text_translate, target_language)  # varibles to pass to run.py
     except KeyError:
         print('you need to enter the sub dialect Capitalized')
 
