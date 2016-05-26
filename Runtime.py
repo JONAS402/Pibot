@@ -1,11 +1,13 @@
 # V1.60
 # TODO
-# import new modules from working dir
+# import new modules from "working" folder
 # ensure all modules are ran from /PIBOT directory
 #
 
 import time
 import os
+
+folders = ['Modules', 'Modules/Vocabulary', 'Modules/Source', 'Languages', ]
 
 
 def make_directory():

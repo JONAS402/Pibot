@@ -175,7 +175,6 @@ def translate_v2(some_string, input_language):
             except AttributeError:
                 print("AttributeError: problem  with the '{0}' languages file... delete it and try again".format(input_language))
                 os.remove(path_and_file)
-
             split_string = some_string.split(' ')
             for word in split_string:
                 if word != '':
