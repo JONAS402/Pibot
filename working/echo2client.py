@@ -15,6 +15,20 @@ def main():
         port = 5001
         sock = socket.socket()
         sock.connect((host, port))
+        username = 'jonas'
+        password1 = ''
+        password2 = ''
+        name = sock.recv(1024).decode()
+        print(name)
+        if name == username:
+            print("User '{0}' logged in.".format(name))
+            sock.send('Hello Dave...'.encode())
+            pass1_hash = sock.recv(1024).decode()
+            pass2_hash = sock.recv(1024).decode()
+            print(pass1_hash)
+            print(pass2_hash)
+        else:
+            sock.send('Incorrect Username!'.encode())
         message = input("please enter a message, :quit to quit: ")
         while message != ':quit':
             sock.send(message.encode())

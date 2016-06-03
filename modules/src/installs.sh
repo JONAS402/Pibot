@@ -73,6 +73,8 @@ then
         sudo apt-get install samba samba-common-bin
         echo "enter a pasword for pi user on smb server"
         sudo smbpasswd -a pi
+        echo "Installing... wiringpi"
+        sudo easy_install wiringpi
         # Java:
         echo "Installing... Java"
         sudo apt-get install -y ant default-jdk
